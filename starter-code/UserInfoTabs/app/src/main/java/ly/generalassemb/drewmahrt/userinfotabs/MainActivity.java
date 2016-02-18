@@ -1,6 +1,8 @@
 package ly.generalassemb.drewmahrt.userinfotabs;
 
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("About Me"));
         tabLayout.addTab(tabLayout.newTab().setText("Contact"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        //Getting a fragment manager, creating a transaction for picture fragment.
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction pictureTransaction = fragmentManager.beginTransaction();
+
+        //Instantiating a picture fragment, adding it to the container "pager"
+        PictureFragment pictureFragment = new PictureFragment();
+        pictureTransaction.add(R.id.pager, pictureFragment);
+        pictureTransaction.commit();
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter
