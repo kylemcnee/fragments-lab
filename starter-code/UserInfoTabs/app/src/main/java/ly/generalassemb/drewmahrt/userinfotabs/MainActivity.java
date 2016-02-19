@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Picture"));
         tabLayout.addTab(tabLayout.newTab().setText("About Me"));
         tabLayout.addTab(tabLayout.newTab().setText("Contact"));
+        tabLayout.addTab(tabLayout.newTab().setText("SECRET"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //Getting a fragment manager, creating a transaction for picture fragment.
